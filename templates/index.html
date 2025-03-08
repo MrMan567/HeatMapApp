@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <meta name="generator" content="GrapesJS Studio">
+  <title>Engagement Map Generator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="container mt-4">
+  <img src="../static/Assets/8A_logo_horzPV-k.png" alt="8A Logo" id="logo">
+  <hr>
+  <div id="welcome">
+    <strong>Welcome to the 8th Army Engagement Heat Map Application</strong>
+  </div>
+  <p id="description">
+    This application creates an interactive map of South Korea by reading engagement data from an Excel file and plotting the results as a heatmap.
+    In addition, it displays static markers to show open source locations for ROK and US military bases. Red Stars represent US installations and Blue Circles represent ROK installations.
+  </p>
+  <form method="post" enctype="multipart/form-data" id="uploadForm">
+    <div class="form-group">
+      <label for="file">Select Excel File (.xlsx)</label>
+      <input type="file" class="form-control-file" id="file" name="file" accept=".xlsx">
+    </div>
+    <button type="submit" class="btn btn-primary">Generate Map</button>
+  </form>
+  <hr>
+  <p id="instructions">
+    • The file must be in .xlsx format.<br>
+    • It should have two columns without headers:<br>
+    &nbsp;&nbsp;&bull; <strong>Column A:</strong> Location Name (e.g., a city or military base in South Korea)<br>
+    &nbsp;&nbsp;&bull; <strong>Column B:</strong> Engagement Count (a numeric value)<br><br>
+    Simply upload your Excel file and click “Generate Map” to view your map.<br>
+    Please send feedback to CW4 Richard Chapman at richard.f.chapman.mil@army.mil.
+  </p>
+</body>
+</html>
